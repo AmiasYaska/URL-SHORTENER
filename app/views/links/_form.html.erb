@@ -1,0 +1,4 @@
+<%= form_with model: Link.new do |form|%>
+    <%= form.url_field :url, placeholder: "https://example.com"%>
+    <%= form.button "Save"%>
+<% end %>
