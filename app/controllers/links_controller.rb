@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
     def index
-        @links = Link.all
+        @links = Link.take_first
     end
 
     def new
@@ -12,6 +12,7 @@ class LinksController < ApplicationController
         if @link.save
             redirect_to root_path
         else
+            @links = Link.take_first
             render :index, status: :unprocessable_entity
         end
     end
