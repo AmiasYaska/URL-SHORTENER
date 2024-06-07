@@ -1,4 +1,6 @@
 <%= form_with model: Link.new do |form|%>
-    <%= form.url_field :url, placeholder: "https://example.com"%>
-    <%= form.button "Save"%>
+    <div class="flex gap-2 items-center">
+        <%= form.url_field :url, required: true, placeholder: "https://example.com", class:"flex-grow rounded"%>
+        <%= form.button "Save", class: "px-2 py-3 bg-gray-100 rounded hover:bg-gray-300"%>
+    </div>
 <% end %>
