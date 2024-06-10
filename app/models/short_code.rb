@@ -4,11 +4,9 @@ class ShortCode
     BASE = ALPHABET.length
 
     def self.encode(number)
-
         if number == 0
             return "0"
         end
-
         results = ""
         while number > 0 do
             first_calc = number % BASE
@@ -20,7 +18,9 @@ class ShortCode
     end
 
     def self.decode(string)
-        
+        if string.length == 1
+            return ALPHABET.index(string) 
+        end
     end
 
 end
