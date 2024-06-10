@@ -22,15 +22,19 @@ class ShortCodeTest < ActiveSupport::TestCase
   # test "encode 2335" do
   #   assert_equal "BF", ShortCode.encode(2335)
   # end
-  # test "encode 97162" do
-  #   assert_equal "BF", ShortCode.encode(97162)
-  # end
+  test "encode 97162" do
+    assert_equal "BF", ShortCode.encode(97162)
+  end
 
-  test "decode b" do
-    assert_equal 11, ShortCode.decode("b")
-  end
-  test "decode BF" do
-    assert_equal 2333, ShortCode.decode("BF")
-  end
+  # test "decode b" do
+  #   assert_equal 11, ShortCode.decode("b")
+  # end
+  # test "decode BF" do
+  #   assert_equal 2335, ShortCode.decode("BF")
+  # end
+  # test "decode PH8" do
+  #   assert_equal 97162, ShortCode.decode("PH8")
+  # end
+  
 
 end

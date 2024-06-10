@@ -2,7 +2,7 @@ class ShortCode
 
     ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".freeze
     BASE = ALPHABET.length
-    CHECKING = "BHU".slice(4)
+    CHECKING = "BHU".slice(0:)
 
     def self.encode(number)
         if number == 0
@@ -19,6 +19,9 @@ class ShortCode
     end
 
     def self.decode(string)
+        # total = 0
+        # pieces = 0
+
         if string.length == 1
             return ALPHABET.index(string) 
         else
@@ -28,11 +31,13 @@ class ShortCode
             return number_divided
         end
 
-        # while string.length > 1 do
-        #     first_char = string.slice(0)
-        #     number_divided = ALPHABET.index(first_char) * 62
-        #     total = number_divided + 
-        # end
+        while string.length > 1 do
+            first_char = string.slice(pieces)
+            second_char = string.slice(pieces + 1)
+            number_divided = (ALPHABET.index(first_char) * 62) + ALPHABET.index(second_char)
+            total += number_divided
+        end
+        total
     end
 
 end
