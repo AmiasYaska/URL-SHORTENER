@@ -11,10 +11,12 @@ class ShortCodeTest < ActiveSupport::TestCase
     assert_equal "b", ShortCode.encode(11)
   end
   test "encode 62" do
-    assert_equal "Z", ShortCode.encode(60)
+    assert_equal "10", ShortCode.encode(62)
   end
   test "encode 10" do
     assert_equal "a", ShortCode.encode(10)
   end
-
+  test "encode 1024" do
+    assert_equal "gw", ShortCode.encode(1024)
+  end
 end
