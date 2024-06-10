@@ -4,8 +4,12 @@ class ShortCode
     BASE = ALPHABET.length
 
     def self.encode(number)
-        results = ""
 
+        if number == 0
+            return "0"
+        end
+
+        results = ""
         while number > 0 do
             first_calc = number % BASE
             char = ALPHABET[first_calc]

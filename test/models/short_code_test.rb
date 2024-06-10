@@ -19,4 +19,8 @@ class ShortCodeTest < ActiveSupport::TestCase
   test "encode 1024" do
     assert_equal "gw", ShortCode.encode(1024)
   end
+  test "encode 2335" do
+    assert_equal "BF", ShortCode.encode(2335)
+  end
+
 end
