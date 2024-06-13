@@ -1,6 +1,7 @@
-# before_action :set_code, only: %i[ show]
-
 class LinksController < ApplicationController
+
+    before_action :set_link, only: [ :show ]
+
     def index
         @links = Link.take_first
     end
@@ -26,6 +27,10 @@ class LinksController < ApplicationController
     private
     def link_params
         params.require(:link).permit(:url)
+    end
+
+    def set_link
+        @link = Link.find(params[:id])
     end
 end
 
