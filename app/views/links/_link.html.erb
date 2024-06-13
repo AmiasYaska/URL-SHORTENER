@@ -1,4 +1,4 @@
 <%= tag.div id: dom_id(link) do%>
     <%= link.to_param%>
-    <%= link.url%>
+    <%= link_to link.url, @link%>
 <% end %>

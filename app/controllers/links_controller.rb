@@ -1,6 +1,11 @@
+# before_action :set_code, only: %i[ show]
+
 class LinksController < ApplicationController
     def index
         @links = Link.take_first
+    end
+
+    def show
     end
 
     def new
